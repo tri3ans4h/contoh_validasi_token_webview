@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    </head>
+    <body >
+        <div id="content_app" >
+            <div id="content">Content</div>
+        </div>
+    </body>
+    <script type="text/javascript">
+        function updateFromAndroid(val) {
+            var content = document.getElementById("content");
+            content.innerHTML = val;
+        }
+        function clickMe() {
+            Android.showToast("Hello to android " + navigator.userAgent);
+        }
+        
+        function check_token(token){
+            var tokn = "abc";
+            var _return = {};
+            _return.status = false;
+            _return.token = token;
+            if (tokn == token){
+                _return.status = true;
+            }
+            return _return;
+        }
+        (function () {
+            var x = "User-agent header sent: " + navigator.userAgent;
+            if (navigator.userAgent.match(/iPad/i))
+            {
+                // do tablet stuff
+            } else if (navigator.userAgent.match(/Android|webOS|iPhone|iPod|Blackberry/i))
+            {
+                var content_app = document.getElementById("content_app");
+                //content_app.innerHTML = "<div id=\"content\">Content</div>";
+                content_app.innerHTML += '<button onclick="clickMe()">Click</button>';
+                console.log(content_app);
+            } else {
+                // do desktop stuff
+            }
+
+        })();
+
+    </script>
+</html>
