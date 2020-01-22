@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript">
+            var x = "User-agent header sent: " + navigator.userAgent;           
+            function updateFromAndroid(val) {
+                var content = document.getElementById("content");
+                content.innerHTML = val;
+            }
+            function clickMe() {
+                console.log(x);
+                Android.showToast("Hello to android "+navigator.userAgent);
+            }
+        </script>
+    </head>
+    <body>
+        <div id="content">TODO write content</div>
+        <button onclick="clickMe()">TODO write content</button>
+    </body>
+</html>
